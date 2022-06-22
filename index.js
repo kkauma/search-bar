@@ -7,17 +7,20 @@
     Helpers: use the methods 'includes' for objective 1
     - The includes() method determines whether one string may be found within another string, returning true or false as appropriate.
 */
-document.getElementById("searchInput").addEventListener("keyup", function(event) {
+document
+  .getElementById("searchInput")
+  .addEventListener("keyup", function (event) {
     let searchQuery = event.target.value.toLowerCase();
-    let allNamesDOMCollection = document.getElementsByClassName('name');
-    
+    let allNamesDOMCollection = document.getElementsByClassName("name");
+
     for (let counter = 0; counter < allNamesDOMCollection.length; counter++) {
-        const currentName = allNamesDOMCollection[counter].textContent.toLowerCase();
-        
-        if (currentName.includes(searchQuery)) {
-            allNamesDOMCollection[counter].style.display = "block";
-        } else {
-            allNamesDOMCollection[counter].style.display = "none";
-        }
+      const currentName =
+        allNamesDOMCollection[counter].textContent.toLowerCase();
+
+      if (currentName.includes(searchQuery)) {
+        allNamesDOMCollection[counter].style.display = "block";
+      } else {
+        allNamesDOMCollection[counter].style.display = "none";
+      }
     }
-});
+  });
